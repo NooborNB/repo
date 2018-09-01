@@ -17,4 +17,8 @@ git commit -m "对本次提交文件的说明" （git commit命令，-m后面输
 
 6.版本回退
 git log  查看提交日志
+git reflog 记录每一次提交或回退操做
 git reset --hard HEAD^(^的个数表示回退几个版本，或者直接写版本号，版本号可以不写全)
+
+
+111
