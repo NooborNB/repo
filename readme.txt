@@ -19,6 +19,8 @@ git commit -m "对本次提交文件的说明" （git commit命令，-m后面输
 git log  查看提交日志
 git reflog 记录每一次提交或回退操做
 git reset --hard HEAD^(^的个数表示回退几个版本，或者直接写版本号，版本号可以不写全)
+git checkout -- <filename>  意思就是，{把filename文件在工作区的修改全部撤销}，这里有两种情况：
 
+一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
 
-111
+一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态
