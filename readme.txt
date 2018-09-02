@@ -24,3 +24,33 @@ git checkout -- <filename>  意思就是，{把filename文件在工作区的修�
 一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
 
 一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态
+
+7.远程库
+1.(创建SSH KEY（用来连接））   --第1步：在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。
+如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key
+命令：ssh-keygen -t rsa -C "youremail.com".
+
+第2步：登陆GitHub，打开“settings”，“SSH and GPG Keys”页面：
+
+然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容（id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人）
+
+SSH Key添加成功.
+
+2.远程库新建仓库
+点击New repository,然后远程库随便取个名字，其他默认就可以;
+
+现在将本地库与新建的这个远程库关联起来
+命令：git remote and orgin git@hib.com:此处为你自己的github账户名/此处为你刚才仓库名.git
+
+将本地库的内容推送到远程库
+命令:git push -u orgin master
+
+再点击repository,就可以看到本地的内容已经同步上去了.
+
+接下来，只要本地有提交，就可以通过
+命令:git push origin master  把本地master分支的最新修改推送到Github.
+
+3.从远程库克隆到本地
+首先自己创建一个远程库(模拟你要克隆的库),创建的时候初始化;
+接下来在本第git客户端运行命令
+git clone git@github.com:github用户名/要克隆的库名.git
