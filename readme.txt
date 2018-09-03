@@ -56,12 +56,30 @@ SSH Key添加成功.
 git clone git@github.com:github用户名/要克隆的库名.git
 
 8.分支管理
-（1）创建与合并分支
+(1)创建与合并分支
 用命令: git checkout -b example   创建并转到example分支;
 用命令: git brach 查看所有分支，当前分支前有个“*”号;
 用命令：git checkout example      来切换到example分支
 用命令：git merge example    把example分支的内容合并到当前分支
 用命令：git branch -d example   删除example分支
 
-（2）解决冲突
-修改最后一行
+(2)解决冲突
+命令：git log --graph --pretty=oneline --abbrev=commit
+
+(3)分支管理策略
+禁用Fast forward模式
+在merge后加上参数 --no-of; 例如 git merger --no-off -m(-m参数表示提交) "此次提交的描述"  分支名
+
+
+
+
+
+
+
+
+
+
+
+
+
+
