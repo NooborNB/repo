@@ -75,8 +75,9 @@ git clone git@github.com:github用户名/要克隆的库名.git
 命令:git stash 储存当前工作区未完成的工作.
 
 修复bug后，用
-命令:git stash pop	来恢复内容（可以多次stash，但恢复的时候，可以先用命令git shtash list查看，
-再用git stash apply status@{0}来恢复）
+命令:git stash pop或者git stash apply  来恢复内容,但后者在恢复的同时不会删除暂存的内容，需要使用
+命令  git stash drop  来删除（可以多次stash，但恢复的时候，可以先用命令git shtash list查看，再用
+命令  git stash apply status@{0}来恢复）
 
 
 
