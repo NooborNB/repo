@@ -71,11 +71,7 @@ git clone git@github.com:github用户名/要克隆的库名.git
 在merge后加上参数 --no-of; 例如 git merger --no-off -m(-m参数表示提交) "此次提交的描述"  分支名
 
 (4)bug分支
-<<<<<<< Updated upstream
 命令:git stash 储存当前工作区未完成的工作
-=======
-命令:git stash 储存当前未完成的工作
->>>>>>> Stashed changes
 
 
 
