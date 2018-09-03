@@ -57,7 +57,8 @@ git clone git@github.com:github用户名/要克隆的库名.git
 
 8.创建分支
 可以用
-命令: git checkout -b 分支名   创建并转到当前分支;
+命令: git checkout -b example   创建并转到example分支;
 用命令: git brach 查看所有分支，当前分支前有个“*”号;
-用命令：git checkout 分支名   来切换分支
-用命令：git merge 分支名    把（分支名）的内容合并到当前分支
+用命令：git checkout example      来切换到example分支
+用命令：git merge example    把example分支的内容合并到当前分支
+用命令：git branch -d example   删除example分支
