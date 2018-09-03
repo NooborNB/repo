@@ -43,7 +43,7 @@ SSH Key添加成功.
 命令：git remote and orgin git@hib.com:此处为你自己的github账户名/此处为你刚才仓库名.git
 
 将本地库的内容推送到远程库
-命令:git push -u orgin master
+命令:git push -u orgin master（master表示推送的分支的名字）
 
 再点击repository,就可以看到本地的内容已经同步上去了.
 
@@ -61,10 +61,15 @@ git clone git@github.com:github用户名/要克隆的库名.git
 用命令: git brach 查看所有分支，当前分支前有个“*”号;
 用命令：git checkout example      来切换到example分支
 用命令：git merge example    把example分支的内容合并到当前分支
-用命令：git branch -d example   删除example分支
+用命令：git branch -d example   删除example分支）（-D表示强行删除）
 
 (2)解决冲突
 命令：git log --graph --pretty=oneline --abbrev=commit
+分支冲突或者本地与远程冲突;
+当本地与远程冲突，你往远程推送失败的时候;
+首先用命令  git pull把最新的提交更新下来，然后在本地合并，解决冲突之后，再推送;
+如果还是失败，可以先用命令  git branch --set-upstream-to=origin/dev dev指定本地dev与远程origin/dev分支的链接,
+在git pull
 
 (3)分支管理策略
 禁用Fast forward模式
@@ -75,15 +80,25 @@ git clone git@github.com:github用户名/要克隆的库名.git
 命令:git stash 储存当前工作区未完成的工作.
 
 修复bug后，用
-命令:git stash pop或者git stash apply  来恢复内容,但后者在恢复的同时不会删除暂存的内容，需要使用
-命令  git stash drop  来删除（可以多次stash，但恢复的时候，可以先用命令git shtash list查看，再用
-命令  git stash apply status@{0}来恢复）
+命令:git stash pop	来恢复内容（可以多次stash，但恢复的时候，可以先用命令git shtash list查看，
+再用git stash apply status@{0}来恢复）
 
+rebase命令可以将提交历史变成一条干净的直线
 
+9.标签管理
+(1)创建标签
+首先，切换到需要打标签的分支上
+用命令：git tag <标签名(例如v1.0)>，可以用命令:git tag 查看所有标签(标签默认是打在最新的commit上)
 
+给历史commit打标签：首先用 git log ...   查看所有commit id，然后用命令git tag <标签名> <commit id>打上标签
 
+标签按字母顺序列出，可以用命令 git show <标签名> 查看标签 
 
-
-
+(2)修改标签
+如果打错标签，可以用命令:git tag -d <标签名>删除标签;
+推送某个标签到远程： git push origin <标签名>;
+推送全部标签到远程： git push origin --tags;
+如果推送标签到远程错误，必须先删除本地标签，命令见上，再删除远程标签：git push origin :refs/tags/标签名
+再登陆GitHub查看.
 
 
