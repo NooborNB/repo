@@ -1,4 +1,4 @@
-﻿1.安装完git
+﻿1.安装git
 
 2.配置用户名，邮箱
 命令：git config  --global user.name "yourname"
