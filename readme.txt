@@ -54,3 +54,9 @@ SSH Key添加成功.
 首先自己创建一个远程库(模拟你要克隆的库),创建的时候初始化;
 接下来在本第git客户端运行命令
 git clone git@github.com:github用户名/要克隆的库名.git
+
+8.创建分支
+可以用
+命令: git checkout -b 分支名   创建并转到当前分支;
+用命令: git brach 查看所有分支，当前分支前有个“*”号;
+用命令：git checkout 分支名   来切换分支
