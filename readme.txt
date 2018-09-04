@@ -53,7 +53,7 @@ SSH Key添加成功.
 3.从远程库克隆到本地
 首先自己创建一个远程库(模拟你要克隆的库),创建的时候初始化;
 接下来在本第git客户端运行命令
-git clone git@github.com:github用户名/要克隆的库名.git
+git clone git@github.com:<github用户名>/要克隆的库名.git
 
 8.分支管理
 (1)创建与合并分支
@@ -101,4 +101,45 @@ rebase命令可以将提交历史变成一条干净的直线
 如果推送标签到远程错误，必须先删除本地标签，命令见上，再删除远程标签：git push origin :refs/tags/标签名
 再登陆GitHub查看.
 
+(3)使用git
+进入作者仓库，点击右上边的fork按钮，就可以把作者的仓库克隆到你的远程仓库，再从远程仓库克隆到本地
+(尽量不要直接从作者的仓库直接克隆到本地，这样你修改后将没有权限推送上去)
 
+如果你希望bootstrap的官方库能接受你的修改，你就可以在GitHub上发起一个pull request.
+当然，对方是否接受你的pull request就不一定了.(未练习)
+
+(4)使用码云
+当访问github网站太慢时，可以使用国内的Git托管服务--码云(gitee.com)(暂留)
+
+10.自定义git
+git config --global color.ui true  Git会适当地显示不同的颜色，比如git status命令
+
+1.忽略特殊文件：(适用于放在git目录下，但又不能提交的文件，例如数据库配置文件)
+方法：在Git工作区的根目录下新建一个.gitignore文件，然后把要忽略的文件名填进去，Git就会自动忽略掉这些文件
+
+1,忽略操作系统自动生成的文件，比如缩略图等；
+2,忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的.class文件；
+3,忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件
+
+https://github.com/github/gitignore  这里可以查看需要忽略的一些文件(需自行整理)
+
+
+强行添加文件到git，命令：git add -f 文件名
+用命令 git check-ignore -v .gitignore 检查.gitignore文件规则是否有问题
+
+2.配置别名
+git config --global alias st status    将st作为status的别名
+(global表示对当前用户起作用，如果不加global，那么配置的别名只对当前仓库起作用)
+（也可以同时为多个单词取一个单词的别名，多个单词用单引号引起来）
+
+如果要删除别名，可以打开.gitconfig文件夹，删除相应的行即可
+
+git config --list --show-origin 可以查看相关配置文件以及文件内容
+
+3.搭建git服务器（需要在Linux上搭建）
+
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000
+
+另外，git学习笔记  Git Cheat Sheet
+
+git英文官网：http://git-scm.com
